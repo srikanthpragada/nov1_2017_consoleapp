@@ -10,17 +10,34 @@ namespace ConsoleApp
     {
         public static void Main()
         {
-            int a = 10, b = 20;
+            Print();
+            Print("Scott");
+            Print( count: 3);  // Named parameter 
+            Print("Tim", 3);
 
-            Swap(ref a,ref b);
+            int total;
 
-            Console.WriteLine("a = {0}, b = {1}", a, b);
+            total = Sum(10, 20, 30);
+            Console.WriteLine(total);
 
-            int num;
+            total = Sum(10, 20, 30,39,19);
+            Console.WriteLine(total);
+        }
 
-            Zero(out num);
+        public static int Sum( params int [] nums)
+        {
+            int total = 0;
 
-            Console.WriteLine(num);
+            foreach (int n in nums)
+                total += n;
+
+            return total;
+        }
+
+        public static void Print(String name = "Anders", int count = 5)
+        {
+            for (int i = 1; i <= count; i++)
+                Console.WriteLine(name);
         }
 
         public static void Zero(out int v)

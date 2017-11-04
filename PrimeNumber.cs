@@ -8,10 +8,29 @@ namespace ConsoleApp
 {
     class PrimeNumber
     {
-        public static void Main()
+        public static void Main(string [] args)
         {
 
-            Console.WriteLine("Value = {0}  {1}", 10);
+            if ( args.Length == 0 )
+            {
+                Console.WriteLine("Sorry! Number is not provided. Quitting!");
+                return;
+            }
+
+            int num = Int32.Parse(args[0]);
+
+            for(int i = 2; i <= num/2; i ++)
+            {
+                if ( num % i == 0)
+                {
+                    Console.WriteLine("Not a prime number!");
+                    return;
+                }
+            }
+
+            Console.WriteLine("Prime Number!");
+
+             
         }
     }
 }
