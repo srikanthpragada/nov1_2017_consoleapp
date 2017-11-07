@@ -11,28 +11,56 @@ namespace ConsoleApp
         // Instance variables
         private String name;  // null
         private int salary;   // 0
+        private string[] skills = new string[5];
 
         // Constructor
-        public Employee (string n, int sal = 0)
+        public Employee(string name, int salary, params string[] skills)
         {
-            name = n;
-            salary = sal;
+            this.name = name;
+            this.salary = salary;
+            for (int i = 0; i < skills.Length; i++)
+                this.skills[i] = skills[i];
+        }
+        // Indexer 
+        public string this[int index]
+        {
+            get
+            {
+                return this.skills[index];
+            }
+            set
+            {
+                this.skills[index] = value;
+            }
         }
 
-        public int GetSalary()
+
+        public int Salary
         {
-            return salary + salary * 40 / 100;
+            get
+            {
+                return salary;
+            }
+            set
+            {
+                if (value >= 0)
+                    this.salary = value;
+            }
+        }
+        // Readonly property 
+        public int NetSalary
+        {
+            get
+            {
+                return salary + salary * 40 / 100;
+            }
         }
 
-        public void SetSalary(int sal)
-        {
-            salary = sal;
-        }
 
         public void Print()
         {
-            Console.WriteLine(name);
-            Console.WriteLine(salary);
+            Console.WriteLine(this.name);
+            Console.WriteLine(this.salary);
         }
     }
 
@@ -42,17 +70,22 @@ namespace ConsoleApp
         {
             Employee e; // Object reference
 
-            e = new Employee("Scott", 50000);
-            e.Print();
+            e = new Employee("Scott", 50000, "Java", "Oracle", "C#");
+            e[3] = "Angular";
 
-            Console.WriteLine(e.GetSalary());
+            // e.Print();
 
-            Employee e2 = new Employee("Anders");
-            e2.SetSalary(100000);
-            e2.SetSalary(75000);
-            e2.Print();
+            Console.WriteLine(e.Salary);
+            Console.WriteLine(e.NetSalary);
+
+            e.Salary = 60000;
+            Console.WriteLine(e.NetSalary);
 
             
+
+
+
+
 
         }
 
