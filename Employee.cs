@@ -61,27 +61,65 @@ namespace ConsoleApp
         {
             Console.WriteLine(this.name);
             Console.WriteLine(this.salary);
+            foreach (string skill in skills)
+            {
+                if ( skill != null)
+                    Console.WriteLine(skill);
+            }
         }
     }
 
+    class OverseasEmployee : Employee
+    {
+        protected string country;
+        protected int allowance; 
+
+        public OverseasEmployee(string name, int salary, string country, int allowance,
+                                              params string [] skills)
+            : base(name, salary,skills)
+        {
+            this.country = country;
+            this.allowance = allowance;
+        }
+
+        public new void Print()
+        {
+            base.Print();
+            Console.WriteLine(country);
+            Console.WriteLine(allowance);
+        }
+
+        public new int NetSalary
+        {
+            get
+            {
+                return base.NetSalary + allowance;
+            }
+        }
+
+    }
     class TestEmployee
     {
         public static void Main()
         {
-            Employee e; // Object reference
+            Employee e;
 
             e = new Employee("Scott", 50000, "Java", "Oracle", "C#");
             e[3] = "Angular";
 
-            // e.Print();
 
-            Console.WriteLine(e.Salary);
-            Console.WriteLine(e.NetSalary);
+            OverseasEmployee oe = new OverseasEmployee("Joe", 60000, "UK",100000, "SAP");
+            oe[1] = "Oracle DBA";
+            oe[2] = "Windows Admin";
 
-            e.Salary = 60000;
-            Console.WriteLine(e.NetSalary);
+            oe.Print();
 
-            
+            Console.WriteLine(oe.NetSalary);
+
+
+
+
+
 
 
 
