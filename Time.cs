@@ -6,19 +6,17 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp
 {
-    class Time
+    struct Time
     {
-        // Auto implemented property 
-        public int Hours { set; get; }
-        public int Mins { set; get; }
-        public int Secs { set; get; }
+        public int Hours, Mins, Secs;
     }
 
     class TestTime
     {
         static void Main(string[] args)
         {
-            Time t = new Time();
+            Time t;
+
             t.Hours = 10;
             t.Mins = 20;
             t.Secs = 30;

@@ -6,6 +6,13 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp
 {
+    class InvalidSalaryException : Exception
+    {
+        public InvalidSalaryException() : base("Invalid Salary : Negative Salary")
+        {
+
+        }
+    }
     class Employee
     {
         // Instance variables
@@ -45,6 +52,8 @@ namespace ConsoleApp
             {
                 if (value >= 0)
                     this.salary = value;
+                else
+                    throw new InvalidSalaryException();
             }
         }
         // Readonly property 
@@ -106,6 +115,9 @@ namespace ConsoleApp
 
             e = new Employee("Scott", 50000, "Java", "Oracle", "C#");
             e[3] = "Angular";
+
+
+            e.Salary = -1000;
 
 
             OverseasEmployee oe = new OverseasEmployee("Joe", 60000, "UK",100000, "SAP");
