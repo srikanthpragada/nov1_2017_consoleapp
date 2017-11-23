@@ -35,6 +35,11 @@ namespace ConsoleApp
             Console.WriteLine(this + ":" + other);
             return this.age - other.age;
         }
+        public void Print()
+        {
+            Console.WriteLine(name);
+            Console.WriteLine(age);
+        }
     }
     class TestPerson
     {

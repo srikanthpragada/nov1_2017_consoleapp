@@ -9,6 +9,10 @@ namespace ConsoleApp
     struct Time
     {
         public int Hours, Mins, Secs;
+        public void Print()
+        {
+            Console.WriteLine("{0}:{1}:{2}", Hours, Mins, Secs);
+        }
     }
 
     class TestTime
