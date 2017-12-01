@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>ConsoleApp.DeptEmployees</StartupObject>
+    <StartupObject>ConsoleApp.UpdateCategory</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="HRLibrary">
@@ -40,6 +40,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,9 +49,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UpdateCategory.cs" />
+    <Compile Include="AddCategory.cs" />
     <Compile Include="AdvFeatures.cs" />
     <Compile Include="ArrayDemo.cs" />
     <Compile Include="AvgNumbers.cs" />
+    <Compile Include="Book.cs" />
+    <Compile Include="Category.cs" />
     <Compile Include="DatesDemo.cs" />
     <Compile Include="DelegatesDemo.cs" />
     <Compile Include="DynamicDemo.cs" />
@@ -58,7 +63,11 @@
     <Compile Include="Factorial.cs" />
     <Compile Include="FunctionsDemo.cs" />
     <Compile Include="GenericsDemo.cs" />
+    <Compile Include="LinqExpressions.cs" />
+    <Compile Include="LinqOperators.cs" />
+    <Compile Include="ListCategories.cs" />
     <Compile Include="ListFiles.cs" />
+    <Compile Include="MyDataContext.cs" />
     <Compile Include="Numbers.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="PrimeNumber.cs" />
