@@ -14,7 +14,7 @@ namespace ConsoleApp
             dc.Log = Console.Out;
 
 
-            foreach (var cat in dc.Categories)
+            foreach (var cat in dc.Categories.OrderBy(c => c.Description))
                 Console.WriteLine(cat.Description);
         }
     }

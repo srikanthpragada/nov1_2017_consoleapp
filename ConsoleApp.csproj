@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>ConsoleApp.UpdateCategory</StartupObject>
+    <StartupObject>ConsoleApp.ListCategories</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="HRLibrary">
@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DeleteCategory.cs" />
     <Compile Include="UpdateCategory.cs" />
     <Compile Include="AddCategory.cs" />
     <Compile Include="AdvFeatures.cs" />
