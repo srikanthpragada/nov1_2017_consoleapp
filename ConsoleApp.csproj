@@ -32,13 +32,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>ConsoleApp.ListCategories</StartupObject>
+    <StartupObject>ConsoleApp.EF.TransDemo</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="HRLibrary">
       <HintPath>..\HRLibrary\bin\Debug\HRLibrary.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
@@ -50,6 +57,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DeleteCategory.cs" />
+    <Compile Include="EF\AddProduct.cs" />
+    <Compile Include="EF\DeleteProduct.cs" />
+    <Compile Include="EF\InventoryContext.cs" />
+    <Compile Include="EF\ListProducts.cs" />
+    <Compile Include="EF\Product.cs" />
+    <Compile Include="EF\TransDemo.cs" />
+    <Compile Include="EF\UpdateProduct.cs" />
     <Compile Include="UpdateCategory.cs" />
     <Compile Include="AddCategory.cs" />
     <Compile Include="AdvFeatures.cs" />
@@ -85,6 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
