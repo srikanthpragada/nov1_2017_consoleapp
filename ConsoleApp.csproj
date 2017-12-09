@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>ConsoleApp.EF.TransDemo</StartupObject>
+    <StartupObject>ConsoleApp.EF.ListProducts</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="DeleteCategory.cs" />
     <Compile Include="EF\AddProduct.cs" />
+    <Compile Include="EF\Category.cs" />
     <Compile Include="EF\DeleteProduct.cs" />
     <Compile Include="EF\InventoryContext.cs" />
     <Compile Include="EF\ListProducts.cs" />

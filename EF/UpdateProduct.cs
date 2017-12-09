@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,10 +20,24 @@ namespace ConsoleApp.EF
                 Console.WriteLine("Product Not Found!");
             else
             {
-                prod.Price = 55000;
+                Console.WriteLine(ctx.Entry(prod).State);
+                prod.Price = 52000;
                 prod.Remarks = "New Camera with more power";
+                Console.WriteLine(ctx.Entry(prod).State);
                 ctx.SaveChanges();
             }
+
+            // Detach an object from Context 
+            var adapter = (IObjectContextAdapter) ctx;
+            var objctx = adapter.ObjectContext;
+            objctx.Detach(prod);
+
+            Console.WriteLine(ctx.Entry(prod).State);
+
+            prod.Price = 60000;
+            ctx.SaveChanges();
+
+           
         }
 
     }

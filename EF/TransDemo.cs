@@ -14,7 +14,7 @@ namespace ConsoleApp.EF
             ctx.Database.Log = Console.WriteLine;
 
             var prod = ctx.Products.Find(2104);  // Select
-            prod.Category = "phone";
+            prod.CatCode = "phone";
 
             prod = ctx.Products.Find(2106);  // Select
             prod.Price = 50000;

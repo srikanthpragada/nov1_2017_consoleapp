@@ -10,12 +10,13 @@ namespace ConsoleApp.EF
     class InventoryContext : DbContext
     {
         public InventoryContext() :
-             base(@"Data Source=(localdb)\mssqllocaldb;Initial Catalog=msdb;Integrated Security=True")
+             base(@"Data Source=(localdb)\mssqllocaldb;Initial Catalog=msdb;Integrated Security=True;MultipleActiveResultSets=true")
         {
             // disable migration 
             Database.SetInitializer<InventoryContext>(null);
         }
 
         public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
     }
 }

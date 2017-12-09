@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace ConsoleApp.EF
 {
     [Table("products")]
-    class Product
+    public  class Product
     {
         [Key]
         [Column("prodid")]
@@ -16,8 +16,11 @@ namespace ConsoleApp.EF
         public int Qoh { get; set; }
         public decimal Price { get; set; }
 
-        [Column("catcode")]
-        public string Category { get; set; }
+        public string CatCode { get; set; }
         public string Remarks { get; set; }
+
+        public virtual Category  Category { get; set; }
+
+
     }
 }

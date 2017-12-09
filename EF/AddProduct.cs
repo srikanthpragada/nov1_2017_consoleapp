@@ -13,10 +13,13 @@ namespace ConsoleApp.EF
             InventoryContext ctx = new InventoryContext();
             ctx.Database.Log = Console.WriteLine;
 
-            Product prod = new Product { Name = "Google Pixel 2", Price = 50000, Qoh = 2, Category = "ph", Remarks = "Google Lens" };
+            Product prod = new Product { Name = "Google Pixel 2", Price = 50000, Qoh = 2, CatCode = "ph", Remarks = "Google Lens" };
+            Console.WriteLine(ctx.Entry(prod).State);
 
             ctx.Products.Add(prod);
+            Console.WriteLine(ctx.Entry(prod).State);
             ctx.SaveChanges();
+
 
         }
     }

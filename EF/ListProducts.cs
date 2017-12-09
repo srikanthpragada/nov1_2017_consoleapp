@@ -13,14 +13,25 @@ namespace ConsoleApp.EF
             InventoryContext ctx = new InventoryContext();
             ctx.Database.Log = Console.WriteLine;
 
-            var prods = from prod in ctx.Products
-                        where prod.Price > 1000
-                        orderby prod.Price
-                        select prod;  // new { Name = prod.Name, Price = prod.Price * (decimal) 1.12 };
+            //var prods = from prod in ctx.Products
+            //            where prod.Price > 1000
+            //            orderby prod.Price
+            //            select prod;  // new { Name = prod.Name, Price = prod.Price * (decimal) 1.12 };
 
-            foreach(var prod in prods)
+            //var allprods = from prod in ctx.Products
+            //               select new { Name = prod.Name, CatDesc = prod.Category.CatDesc };
+
+            //foreach(var prod in allprods)
+            //{
+            //    Console.WriteLine("{0} - {1}", prod.Name, prod.CatDesc );
+            //}
+
+            // Console.ReadLine();
+
+            foreach (var prod in ctx.Products.Include("Category"))
             {
-                Console.WriteLine("{0} - {1}", prod.Name, prod.Price, prod.Category);
+                // Console.WriteLine(prod.GetType().FullName);
+                Console.WriteLine("{0} - {1}", prod.Name, prod.Category.CatDesc);
             }
         }
     }
